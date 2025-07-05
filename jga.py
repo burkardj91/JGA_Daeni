@@ -10,27 +10,6 @@ import random
 import streamlit as st
 st.set_page_config(page_title="Daniele's JGA Game")  # ✅ MUST be first!
 
-import random
-import streamlit_authenticator as stauth
-
-names = ["Daniele"]
-usernames = ["Daniele"]
-passwords = ["Daniele"]
-hashed_pw = stauth.Hasher(passwords).generate()
-
-authenticator = stauth.Authenticate(
-    names, usernames, hashed_pw,
-    "my_app", "abcdef", cookie_expiry_days=1
-)
-
-name, auth_status, username = authenticator.login("Login", "main")
-
-if auth_status:
-    st.success(f"Welcome {name}!")
-    # your Streamlit app goes here
-
-elif auth_status is False:
-    st.error("Incorrect username or password")
 
 # --- Set up page ---
 #st.set_page_config(page_title="Daniele's JGA Game", layout="centered")
